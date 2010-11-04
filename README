@@ -1,3 +1,16 @@
+== Wiki on Rails
+
+Copy the database.yml.default and paste it without the .default ending.
+Great success!
+
+If you want mysql you need to install the mysql2 gem
+
+== gem install mysql2
+
+Double check that it's in your Gemfile as well
+
+
+
 == Welcome to Rails
 
 Rails is a web-application framework that includes everything needed to create
