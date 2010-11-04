@@ -1,3 +1,8 @@
+you might have to:
+gem install activerecord-mysql2-adapter
+
+rails -d mysql app_namn, startar med mysql
+
 == Welcome to Rails
 
 Rails is a web-application framework that includes everything needed to create
