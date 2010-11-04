@@ -2,6 +2,8 @@
 
 <table>
   <tr>
+		<th>Title</th>
+		<th>Body</th>
     <th></th>
     <th></th>
     <th></th>
@@ -9,6 +11,8 @@
 
 <% @articles.each do |article| %>
   <tr>
+		<td><%= article.title %></td>
+		<td><%= article.body %></td>
     <td><%= link_to 'Show', article %></td>
     <td><%= link_to 'Edit', edit_article_path(article) %></td>
     <td><%= link_to 'Destroy', article, :confirm => 'Are you sure?', :method => :delete %></td>
