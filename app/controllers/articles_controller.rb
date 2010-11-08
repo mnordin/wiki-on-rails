@@ -1,5 +1,10 @@
 class ArticlesController < ApplicationController
   
+  def start
+    @article = Article.find_by_title("start")
+    redirect_to(@article)
+  end
+  
   # GET /articles
   def index
     @articles = Article.all
