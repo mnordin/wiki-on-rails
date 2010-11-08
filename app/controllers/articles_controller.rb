@@ -1,30 +1,31 @@
 class ArticlesController < ApplicationController
+  
+  def start
+    @article = Article.find_by_title("start")
+    redirect_to(@article)
+  end
+  
   # GET /articles
-  # GET /articles.xml
   def index
     @articles = Article.all
   end
-
-  # GET /articles/1
-  # GET /articles/1.xml
+  
+  # GET /articles/start
   def show
-    puts params
-    @article = Article.find(params[:id])
+    @article = Article.find_by_title(params[:id])
   end
 
   # GET /articles/new
-  # GET /articles/new.xml
   def new
     @article = Article.new
   end
 
-  # GET /articles/1/edit
+  # GET /articles/start/edit
   def edit
-    @article = Article.find(params[:id])
+    @article = Article.find_by_title(params[:id])
   end
 
   # POST /articles
-  # POST /articles.xml
   def create
     @article = Article.new(params[:article])
 
@@ -35,10 +36,9 @@ class ArticlesController < ApplicationController
     end
   end
 
-  # PUT /articles/1
-  # PUT /articles/1.xml
+  # PUT /articles/title
   def update
-    @article = Article.find(params[:id])
+    @article = Article.find_by_title(params[:id])
 
     if @article.update_attributes(params[:article])
       redirect_to(@article, :notice => 'Article was successfully updated.')
@@ -47,12 +47,12 @@ class ArticlesController < ApplicationController
     end
   end
 
-  # DELETE /articles/1
-  # DELETE /articles/1.xml
+  # DELETE /articles/start
   def destroy
-    @article = Article.find(params[:id])
+    @article = Article.find_by_title(params[:id])
     @article.destroy
 
     redirect_to(articles_url)
   end
+   
 end
