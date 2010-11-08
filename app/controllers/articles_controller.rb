@@ -8,6 +8,7 @@ class ArticlesController < ApplicationController
   # GET /articles/1
   # GET /articles/1.xml
   def show
+    puts params
     @article = Article.find(params[:id])
   end
 
