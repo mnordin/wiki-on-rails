@@ -10,12 +10,12 @@ module ApplicationHelper
     body.gsub!("\[i\]", "<em>")
     body.gsub!("\[/i\]", "</em>")
     #body.gsub!("\n", "<br/>")
-    #body.gsub!("\*", "!")
     
-    body.gsub!(Regexp.new("===(.+)==="), "<h2>\1</h2>")
-    body.gsub!(Regexp.new("==(.+)=="), "<h3>\1</h3>")
-    body.gsub!(Regexp.new("\n\-\b(.+)", "<li>\1</li>"))
-    body.gsub!(Regexp.new("\[\[(\w+)\]\]"), "<a href=\"/mongoose-wiki/article/view/\1\">\1</a>")
+    body.gsub!(Regexp.new("===(.+)==="), '<h2>\1</h2>')
+    body.gsub!(Regexp.new("==(.+)=="), '<h3>\1</h3>')
+    body.gsub!(Regexp.new("\n\\*\s(.+)"), '<li>\1</li>')
+    body.gsub!(Regexp.new("\\[\\[(.+)\\]\\]"), '<a href=/articles/\1>\1</a>')
+    body.gsub!(Regexp.new("\\[(.+)\s(.+)\\]"), '<a href="\1">\2</a>')
     body
   end
 
