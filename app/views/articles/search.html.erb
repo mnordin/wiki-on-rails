@@ -8,7 +8,7 @@
   <% @results.each do |resultArticle| %>
     <li>
       <h2><%=resultArticle.title %></h2>
-      <p><%=resultArticle.body %></p>
+      <p><%= translate(h resultArticle.body) %></p>
     </li>
   <% end %>
 </ul>
