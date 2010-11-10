@@ -1,6 +1,10 @@
 WikiOnRails::Application.routes.draw do
+  
+  # Steals search keyword from articles
+  match 'articles/search' => 'articles#search'
+  
   resources :articles
-
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

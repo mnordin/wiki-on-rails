@@ -24,7 +24,15 @@ class ArticlesController < ApplicationController
   def edit
     @article = Article.find_by_title(params[:id])
   end
-
+  
+  # GET /article/search (works?)
+  def search
+    if params[:q] then
+      @query = params[:q]
+      @results = Article.new.search(params[:q])
+    end
+  end
+  
   # POST /articles
   def create
     @article = Article.new(params[:article])

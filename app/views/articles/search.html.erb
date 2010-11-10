@@ -1,0 +1,15 @@
+<form action="" method="get">
+  <label for="q" style="display:none;">Search:</label>
+  <input type="text" value="<%=@query%>" name="q" />
+  <input type="submit" value="Search" />
+</form>
+<% if @results then %>
+<ul id="searchResult">
+  <% @results.each do |resultArticle| %>
+    <li>
+      <h2><%=resultArticle.title %></h2>
+      <p><%=resultArticle.body %></p>
+    </li>
+  <% end %>
+</ul>
+<% end %>
